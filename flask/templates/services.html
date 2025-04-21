@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+       button{
+        background-color: blue;
+        padding:10px;
+        color:white;
+        border-radius:5px;
+       }
+    </style>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div>
+        <a href="/">
+            <button>Home</button>
+        </a>
+        <a href="/about">
+            <button>About</button>
+        </a>
+        <a href="/contact">
+            <button>Contact</button>
+        </a>
+       
+    </div>
+    <h1>Hello Services Page</h1>
+    {% endblock %}
+    
+</body>
+</html>

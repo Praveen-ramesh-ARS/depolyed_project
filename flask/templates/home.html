@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for("static", filename="css/style.css")}}">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div>
+        <a href="/about">
+            <button>About</button>
+        </a>
+        <a href="/contact">
+            <button>Contact</button>
+        </a>
+        <a href="/services">
+            <button>Services</button>
+        </a>
+    </div>
+    
+    <h1>Hello Home Page</h1>
+    <img src="{{url_for("static",filename="images/1pic.jpg")}}" width="330" height="230">
+    <button onclick="popupmsg()">click msg</button>
+    {% endblock %}
+
+    
+</body>
+<script src="{{url_for("static", filename="js/sample.js")}}" ></script>
+</html>
