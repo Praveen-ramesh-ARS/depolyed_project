@@ -26,10 +26,6 @@ def flask_db():
     return render_template("index.html", ALLdata=data)
     # Or: return jsonify(data)
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
-
 
 
 # @app.route("/")
