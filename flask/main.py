@@ -1,23 +1,34 @@
 from flask import Flask,render_template,url_for,request,redirect,make_response,jsonify
-from flask_mysqldb import MySQL
+import pymysql
 
+app = Flask(__name__)
 
-app = Flask(__name__) #app is a object
+# MySQL connection configuration
+db_config = {
+    "host": "localhost",
+    "user": "root",
+    "password": "Praveen@1993",
+    "database": "flask_db",
+    "cursorclass": pymysql.cursors.DictCursor
+}
 
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "Praveen@1993"
-app.config["MYSQL_DB"] = "flask_db"
-app.config["MYSQL_CURSORCLASS"] = "DictCursor"
-mysql = MySQL(app)
-
+# Route to fetch data from database
 @app.route("/database")
 def flask_db():
-	cursor = mysql.connection.cursor()
-	cursor.execute("SELECT * FROM USER_TBL")
-	data = cursor.fetchall()
-	return render_template("index.html",ALLdata=data)
-	# return jsonify(data)
+    connection = pymysql.connect(**db_config)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM USER_TBL")
+            data = cursor.fetchall()
+    finally:
+        connection.close()
+
+    return render_template("index.html", ALLdata=data)
+    # Or: return jsonify(data)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 
 
