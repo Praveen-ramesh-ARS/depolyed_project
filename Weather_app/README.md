@@ -42,6 +42,7 @@ cd weather-predictor
 python -m venv .venv
 # For Windows:
 .venv\Scripts\activate
+
 # For macOS/Linux:
 source .venv/bin/activate
 
@@ -106,31 +107,7 @@ python manage.py createsuperuser
 Login at:
 http://127.0.0.1:8000/admin/
 
-View and filter PredictionLog records.
 
-✨ Sample Output
-🌆 City: Chennai
-🌡 Temperature: 34.6°C
-💧 Humidity: 78%
-🌬 Wind Speed: 2.5 m/s
-🧭 Pressure: 1002 hPa
-🔮 Prediction: Rain Likely
 
-🛠 Folder Structure
-arduino
-Copy
-Edit
-weather_app/
-├── templates/
-│   └── home.html
-├── static/
-├── predictor.py
-├── weather_api.py
-├── models.py
-├── views.py
-├── admin.py
-├── model.pkl
-├── urls.py
-...
 
-pip install -r requirements.txt
+
