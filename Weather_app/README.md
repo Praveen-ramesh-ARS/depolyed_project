@@ -34,7 +34,7 @@ This project is a **Django web application** that predicts weather-related outco
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/yourusername/weather-predictor.git](https://github.com/Praveen-ramesh-ARS/depolyed_project/tree/main/Weather_app)
+git clone (https://github.com/Praveen-ramesh-ARS/depolyed_project/tree/main/Weather_app)
 cd weather-predictor
 
 2. Create and activate virtual environment
@@ -132,6 +132,5 @@ weather_app/
 ├── model.pkl
 ├── urls.py
 ...
-Copy
-Edit
+
 pip install -r requirements.txt
